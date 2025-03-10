@@ -1507,9 +1507,6 @@
   .align-top {
     vertical-align: top;
   }
-  .font-sans {
-    font-family: var(--font-sans);
-  }
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
@@ -1930,6 +1927,10 @@
   .transition-normal {
     transition-behavior: normal;
   }
+  .duration-200 {
+    --tw-duration: 200ms;
+    transition-duration: 200ms;
+  }
   .ease-in {
     --tw-ease: var(--ease-in);
     transition-timing-function: var(--ease-in);
@@ -2091,6 +2092,16 @@
   .transform-view {
     transform-box: view-box;
   }
+  .hover\:scale-110 {
+    &:hover {
+      @media (hover: hover) {
+        --tw-scale-x: 110%;
+        --tw-scale-y: 110%;
+        --tw-scale-z: 110%;
+        scale: var(--tw-scale-x) var(--tw-scale-y);
+      }
+    }
+  }
   .hover\:text-gray-300 {
     &:hover {
       @media (hover: hover) {
@@ -2190,6 +2201,17 @@
       line-height: var(--tw-leading, var(--text-7xl--line-height));
     }
   }
+}
+module.exports = {
+  content: ['./*.html'], theme: {
+    screens: {
+      sm: "480px", md:"768px", lg:"1024px", xl:"1280px",;
+    }
+    , fontFamily: {
+      nunito: ['Nunito', 'sans-serif'];
+    }
+  }
+  , plugins: [],;
 }
 @property --tw-translate-x {
   syntax: "*";
@@ -2494,6 +2516,10 @@
   syntax: "*";
   inherits: false;
 }
+@property --tw-duration {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-ease {
   syntax: "*";
   inherits: false;
@@ -2511,10 +2537,6 @@
   inherits: false;
 }
 @property --tw-contain-style {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-duration {
   syntax: "*";
   inherits: false;
 }
